@@ -2,16 +2,31 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import IncrementButton from '../components/Button';
+import BuyList from '../components/BuyList.tsx';
+const buyList = [
+'Controller',
+'Bread',
+'Water',
+'Notebook',
+'Math Book',
+'Choco Bar',
+'Milk'
+];
 ---
 
 <Layout title="Welcome to Astro.">
+	
 	<main>
-		<h1>El simple boton </h1>
-		<IncrementButton   client:load/>
+		<!-- <h1>El simple boton </h1>
+		<IncrementButton   client:load/> -->
+		<h1>Compras de la semana</h1>
+
+    <BuyList items={buyList} client:load />
 	</main>
 </Layout>
 
 <style>
+
 	main {
 		margin: auto;
 		padding: 1rem;

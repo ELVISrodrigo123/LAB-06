@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import IncrementButton from '../components/Button';
 import BuyList from '../components/BuyList.tsx';
-const buyList = [
+import RandomCard from '../components/RandomCard'
+/* const buyList = [
 'Controller',
 'Bread',
 'Water',
@@ -11,7 +11,9 @@ const buyList = [
 'Math Book',
 'Choco Bar',
 'Milk'
-];
+]; */
+const URL_RANDOM_AVATAR = 'https://api.dicebear.com/9.x/micah/svg?seed=';
+const randomAvatarUrl = `${URL_RANDOM_AVATAR}${Math.random().toString(36).substring(2, 15)}`;
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,9 +21,11 @@ const buyList = [
 	<main>
 		<!-- <h1>El simple boton </h1>
 		<IncrementButton   client:load/> -->
-		<h1>Compras de la semana</h1>
+<!-- 		<h1>Compras de la semana</h1>
 
-    <BuyList items={buyList} client:load />
+    <BuyList items={buyList} client:load /> -->
+	<h1>Pregunta 4</h1>
+	<RandomCard url={randomAvatarUrl}/>
 	</main>
 </Layout>
 
